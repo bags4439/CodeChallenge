@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_smoke">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/panel_height"
+        android:background="@drawable/curve_green_bg"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.personal_details.PersonDetailsFragment"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/spacing_medium"
+    android:paddingEnd="@dimen/spacing_medium"
+    android:paddingTop="@dimen/spacing_medium">
+    <ImageView
+        android:layout_width="@dimen/spacing_xxl"
+        android:layout_height="@dimen/spacing_xxl"
+        android:src="@drawable/menu"
+        android:layout_marginBottom="@dimen/spacing_small"/>
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/farmers_panel"
+          android:layout_alignParentStart="true"
+          android:textColor="@android:color/white"
+          android:textStyle="bold"
+          android:textSize="@dimen/font_xl"/>
+      <com.google.android.material.imageview.ShapeableImageView
+          android:layout_width="@dimen/spacing_xxxl"
+          android:layout_height="@dimen/spacing_xxxl"
+          android:src="@drawable/sample_profile"
+          android:layout_marginBottom="16dp"
+          android:layout_alignParentEnd="true"
+          app:shapeAppearanceOverlay="@style/roundImageView.Small"/>
+  </RelativeLayout>
+    <include layout="@layout/searchbox"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/spacing_medium"
+            app:cardBackgroundColor="@android:color/background_light"
+            android:layout_marginTop="@dimen/spacing_medium">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_medium">
+                <ImageView
+                    android:id="@+id/iv_book"
+                    android:layout_width="@dimen/spacing_xxxl"
+                    android:layout_height="@dimen/spacing_xxxl"
+                    android:src="@drawable/agenda"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/farmers_panel"
+                    android:textSize="@dimen/font_xxl"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_book"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/spacing_medium"
+                    android:textColor="@color/primaryBlack"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/farmers_panel_description"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_book"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:textColor="@color/primaryBlack"
+                    android:textSize="@dimen/font_medium"
+                    android:textStyle="bold"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            app:cardBackgroundColor="@android:color/background_light"
+            app:cardCornerRadius="@dimen/spacing_medium">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/spacing_medium">
+                <TextView
+                    android:id="@+id/tv_personal_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personal_details"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/primaryBlack"
+                    android:textSize="@dimen/font_medium"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/spacing_medium"/>
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabMode="fixed"
+                    app:tabTextAppearance="@style/MyCustomTextAppearance"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_personal_details"
+                    android:id="@+id/tabs_layout"
+                    app:tabIndicatorColor="@color/colorAccent"
+                    app:tabBackground="@drawable/tab_color_selector">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_one" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_two" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_three" />
+
+                </com.google.android.material.tabs.TabLayout>
+                <LinearLayout
+                    android:id="@+id/v_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tabs_layout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>
+</FrameLayout>

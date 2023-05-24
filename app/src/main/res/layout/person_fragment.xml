@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_medium">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <com.google.android.material.imageview.ShapeableImageView
+              android:layout_width="@dimen/profile_photo"
+              android:layout_height="@dimen/profile_photo"
+              android:src="@drawable/sample_profile"
+              android:layout_marginBottom="16dp"
+              android:layout_alignParentEnd="true"
+              android:id="@+id/iv_profile_photo"
+              app:shapeAppearanceOverlay="@style/roundImageView"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              android:padding="@dimen/spacing_xxs"
+              app:strokeColor="@android:color/holo_green_dark"
+              app:strokeWidth="@dimen/spacing_xxs"/>
+
+          <include layout="@layout/icon_button"
+              android:id="@+id/v_take_photo"
+              android:layout_marginStart="@dimen/spacing_xxl"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintLeft_toRightOf="@+id/iv_profile_photo"
+              app:layout_constraintTop_toTopOf="parent"/>
+          <include layout="@layout/icon_button"
+              android:id="@+id/v_upload_photo"
+              android:layout_marginStart="@dimen/spacing_medium"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintLeft_toRightOf="@+id/v_take_photo"
+              app:layout_constraintTop_toTopOf="parent"/>
+
+          <TextView
+              android:id="@+id/tv_gender_label"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/primaryBlack"
+              android:textStyle="bold"
+              android:textSize="@dimen/font_medium"
+              app:layout_constraintStart_toStartOf="@+id/v_take_photo"
+              app:layout_constraintTop_toBottomOf="@+id/v_take_photo"
+              android:text="@string/gender"
+              android:layout_marginTop="@dimen/spacing_medium"/>
+          <RadioGroup
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toStartOf="@+id/tv_gender_label"
+              app:layout_constraintTop_toBottomOf="@+id/tv_gender_label"
+              android:orientation="horizontal">
+              <RadioButton
+                  android:id="@+id/rb_male"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/male"
+                  android:textSize="@dimen/font_small"
+                  android:textStyle="bold"
+                  android:layout_marginEnd="@dimen/spacing_medium"/>
+              <RadioButton
+                  android:id="@+id/rb_female"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/female"
+                  android:textSize="@dimen/font_small"
+                  android:textStyle="bold"/>
+          </RadioGroup>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <include
+           android:id="@+id/v_first_name"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_last_name"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_birth_place"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_dob"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_house_number"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_community"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_occupation"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_district"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_region"
+           layout="@layout/text_input"/>
+       <include
+           android:id="@+id/v_marital_status"
+           layout="@layout/text_input"/>
+    <TextView
+        android:id="@+id/tv_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/bio"
+        android:textSize="@dimen/font_medium"
+        android:textColor="@color/primaryBlack" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bio_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorTextAppearance="@style/ErrorTextAppearance"
+        app:boxStrokeColor="@android:color/holo_green_dark"
+        android:layout_marginBottom="@dimen/spacing_xxxl">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="6"
+            android:hint="@string/write_short_description"
+            android:gravity="start"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/spacing_xxxxxl"
+        android:layout_gravity="center_horizontal">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_reset"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            style="@style/Button.Primary"
+            android:text="@string/reset"
+            android:textColor="@android:color/white"
+            android:background="@drawable/curve_green_bg"
+            android:layout_marginEnd="@dimen/spacing_medium"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            style="@style/Button.Primary"
+            android:text="@string/save"
+            android:textColor="@color/primaryBlack"
+            android:background="@drawable/ring_green_bg"/>
+    </LinearLayout>
+</LinearLayout>
+
+</LinearLayout>
